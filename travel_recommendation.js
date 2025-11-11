@@ -32,12 +32,16 @@ document.getElementById('search').addEventListener('submit', function(event) {
                             var cityDiv = document.createElement("div")
                             let cityName = document.createElement("h3");
                             let cityDescription =document.createElement("p");
+                            var cityImage = document.createElement("img");
 
                             cityName.textContent=data[key][index].cities[index2].name;
                             cityDiv.appendChild(cityName);
                             
                             cityDescription.textContent=data[key][index].cities[index2].description;
                             cityDiv.appendChild(cityDescription);
+
+                            cityImage.src=data[key][index].cities[index2].imageUrl;
+                            cityDiv.appendChild(cityImage);
 
                             div.appendChild(cityDiv);
                         }
@@ -48,12 +52,15 @@ document.getElementById('search').addEventListener('submit', function(event) {
                     for (let index = 0; index < data[key].length; index++) {
                         var name = document.createElement("h2");
                         var description =document.createElement("p");
+                        var image = document.createElement("img");
 
                         name.textContent=data[key][index].name;
                         description.textContent=data[key][index].description;
+                        image.src=data[key][index].imageUrl;
                         
                         div.appendChild(name);
-                        div.appendChild(description);                
+                        div.appendChild(description);  
+                        div.appendChild(image);              
                     };
                     break;
             };
